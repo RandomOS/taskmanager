@@ -1,0 +1,50 @@
+# Project: TaskManager
+# Makefile created by Dev-C++ 4.9.9.2
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = obj/dialogs.res
+OBJ  = obj/auxfuction.o obj/debug.o obj/listview.o obj/main.o obj/oncommand.o obj/process.o obj/statusbar.o obj/uifunction.o $(RES)
+LINKOBJ  = obj/auxfuction.o obj/debug.o obj/listview.o obj/main.o obj/oncommand.o obj/process.o obj/statusbar.o obj/uifunction.o $(RES)
+LIBS =  -mwindows -lcomctl32 -lpsapi -lshlwapi -luxtheme -s 
+BIN  = TaskManager.exe
+CFLAGS = -Wall -finput-charset=GBK -fexec-charset=GBK
+RM = rm -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before TaskManager.exe all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o "TaskManager.exe" $(LIBS)
+
+obj/auxfuction.o: src/auxfuction.c
+	$(CC) -c src/auxfuction.c -o obj/auxfuction.o $(CFLAGS)
+
+obj/debug.o: src/debug.c
+	$(CC) -c src/debug.c -o obj/debug.o $(CFLAGS)
+
+obj/listview.o: src/listview.c
+	$(CC) -c src/listview.c -o obj/listview.o $(CFLAGS)
+
+obj/main.o: src/main.c
+	$(CC) -c src/main.c -o obj/main.o $(CFLAGS)
+
+obj/oncommand.o: src/oncommand.c
+	$(CC) -c src/oncommand.c -o obj/oncommand.o $(CFLAGS)
+
+obj/process.o: src/process.c
+	$(CC) -c src/process.c -o obj/process.o $(CFLAGS)
+
+obj/statusbar.o: src/statusbar.c
+	$(CC) -c src/statusbar.c -o obj/statusbar.o $(CFLAGS)
+
+obj/uifunction.o: src/uifunction.c
+	$(CC) -c src/uifunction.c -o obj/uifunction.o $(CFLAGS)
+
+obj/dialogs.res: dialogs.rc 
+	$(WINDRES) -i dialogs.rc --input-format=rc -o obj/dialogs.res -O coff 

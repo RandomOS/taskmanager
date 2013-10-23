@@ -1,13 +1,13 @@
-# Usage
+## Usage
 TaskManager.exe
 
-# Description
+## Description
 A TaskManager on Win32 Platform written in C and Win32 SDK.
 
-# IDE
+## IDE
     Dev-C++ 4.9.9.2
 
-# Compile
+## Compile
 	For Mingw:
         make -f Makefile.mingw
 

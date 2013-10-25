@@ -141,7 +141,7 @@ int CALLBACK CompareFunc(LPARAM lParam1, LPARAM lParam2, int iSubItem)
 
     switch (iSubItem)
     {
-        case 0:	// 进程名称
+        case 0: // 进程名称
         case 2: // 路径
         case 3: // 进程命令行
             if (item.fmt & HDF_SORTUP) //升序
@@ -154,7 +154,7 @@ int CALLBACK CompareFunc(LPARAM lParam1, LPARAM lParam2, int iSubItem)
             }
             break;
 
-        case 1:	// PID
+        case 1: // PID
             if (item.fmt & HDF_SORTUP)
             {
                 ret = _ttoi(szBuf1) - _ttoi(szBuf2);

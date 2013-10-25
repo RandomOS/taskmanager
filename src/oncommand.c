@@ -25,13 +25,13 @@ void OnKill(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify)
 
 void OnRun(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify)
 {
-	SelectedRunAsMode = RUNAS_MODE_CURRENT;
+    SelectedRunAsMode = RUNAS_MODE_CURRENT;
     ShowRunDlg(hwnd, 0);
 }
 
 void OnRunAsLimit(HWND hwnd, int id, HWND hwndCtl, UINT codeNotify)
 {
-	SelectedRunAsMode = RUNAS_MODE_LIMITED;	
+    SelectedRunAsMode = RUNAS_MODE_LIMITED;    
     ShowRunDlg(hwnd, 0);
 }
 
